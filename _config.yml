@@ -26,12 +26,16 @@ social:
     #url: http://twitter.com/jekyllrb
     #  - title: facebook
     #    url:
+  - title: linkedin
+    url: https://www.linkedin.com/in/sookoor
   - title: stack-overflow
     url: https://careers.stackoverflow.com/sookoor
   - title: bitbucket
     url: http://bitbucket.org/sookoor
   - title: github
     url: http://github.com/sookoor
+  - title: google-plus
+    url: https://www.google.com/+TamimSookoor
 
 # Postal address (add as many lines as necessary)
 address:
