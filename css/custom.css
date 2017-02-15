@@ -21,3 +21,9 @@ a {
 a:hover {
     color: #333333;
 }
+
+/* Navigation Bar styling */
+.navbar-inverse .navbar-brand {
+    color: #ffffff;
+    font-size: 28px;
+}
