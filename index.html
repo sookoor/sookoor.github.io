@@ -9,7 +9,11 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Tamim's Portfolio</title>
+    <title>Leaflet Map</title>
+
+    <!-- External Stylesheets -->
+    <link rel="stylesheet"
+          href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -28,6 +32,7 @@
 </head>
 
 <body>
+    <!-- Our web map and content will go here -->
 
     <!-- Navigation -->
     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
@@ -70,6 +75,13 @@
                 <h1 class="page-header">Tamim Sookoor
                     <small>Urban Designer and Planner</small>
                 </h1>
+            </div>
+        </div>
+        <!-- /.row -->
+
+        <div class="row">
+            <div class="col-lg-12">
+                <div id="map" style="width: 705px; height: 375px"></div>
             </div>
         </div>
         <!-- /.row -->
@@ -126,6 +138,16 @@
 
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
+
+    <!-- Add the Leaflet JavaScript library -->
+    <script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
+
+    <script>
+        // Create variable to hold map element, give initial settings to map
+        var map = L.map('map', { center: [42.362432, -71.086086], zoom: 14});
+        // Add OpenStreetMap tile layer to map
+        L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', { attribution: '© OpenStreetMap' }).addTo(map);
+    </script>
 
 </body>
 
