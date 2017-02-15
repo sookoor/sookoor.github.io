@@ -27,3 +27,18 @@ a:hover {
     color: #ffffff;
     font-size: 28px;
 }
+
+.navbar-inverse {
+    background-color: #34576d;
+    border-color: #666666;
+    -moz-box-shadow: 2px 2px 7px #000;
+    -webkit-box-shadow: 2px 2px 7px #000;
+}
+
+.navbar-inverse .navbar-nav>li>a {
+    color: #ffffff;
+}
+
+.navbar-inverse .navbar-nav>li>a:hover {
+    color: #999999;
+}
