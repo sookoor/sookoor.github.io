@@ -152,6 +152,14 @@
 
         // Create point feature for Kendall Square T Station
         var myDataPoint = L.marker([42.362432, -71.086086]).addTo(map);
+
+        // Create line feature for Mass Ave Bridge, style and add to map
+        var myDataLine = L.polyline([[42.357227, -71.092631],[42.351411,
+                -71.089723]], {color: 'red', weight: 10}).addTo(map);
+
+        // Create area feature for MIT, style and add to map
+        var myArea = L.polygon([[42.353770, -71.103606], [42.355447,
+                -71.104475], [42.362681, -71.089830], [42.361829, -71.079230]], {color: 'blue', weight: 4}).addTo(map);
     </script>
 
 </body>
