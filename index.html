@@ -176,7 +176,7 @@ myDataPoint.bindPopup("<h3>Kendall Square</h3><p>Cambridge, MA<br> Information a
         // Write function to set Properties of the Popup
         function onMapClick(e) {
             popup
-                .setLatLng(e.lanlng)
+                .setLatLng(e.latlng)
                 .setContent("You clicked the map at " + e.latlng.toString())
                 .openOn(map);
         }
