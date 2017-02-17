@@ -144,6 +144,10 @@
     <!-- Add the Leaflet JavaScript library -->
     <script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
 
+    <!-- HTML Page Elements are here -->
+    <script
+            src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <!-- Web Map Scripts are here -->
     <script>
         // Create variable to hold map element, give initial settings to map
         var map = L.map('map', { center: [42.362432, -71.086086], zoom: 14});
@@ -183,8 +187,13 @@ myDataPoint.bindPopup("<h3>Kendall Square</h3><p>Cambridge, MA<br> Information a
 
         // Listen for a click event on the Map element
         map.on('click', onMapClick);
-    </script>
 
+        // load GeoJSON from an external file
+        $.getJSON("coffee_cafes.geojson", function(data) {
+            // add GeoJSON layer to the map once the file is loaded
+            L.geoJson(data).addTo(map);
+        });
+    </script>
 </body>
 
 </html>
