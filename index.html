@@ -89,8 +89,9 @@
         <hr>
 
         <div class="row">
-            <div class="col-lg-12">
-                <button type="button" onclick="helloworld()">Click Me!</button>
+            <div class="col-lg-12" id="controls" style="margin: 15px;">
+                <button type="button" onclick="helloworld()"
+                    id="addButton">Show All Coffee Shops</button>
             </div>
         </div>
         <!-- /.row -->
@@ -200,12 +201,22 @@ myDataPoint.bindPopup("<h3>Kendall Square</h3><p>Cambridge, MA<br> Information a
         // load GeoJSON from an external file
         $.getJSON("data/coffee_cafes.geojson", function(data) {
             // add GeoJSON layer to the map once the file is loaded
-            L.geoJson(data, {
+            // set coffeeShopPoints to our coffeeShop GeoJSON
+            var coffeeShopPoints = L.geoJson(data, {
                 onEachFeature: function (feature, layer) { 
                     layer.bindPopup(feature.properties.name);
                 }
-            }).addTo(map);
+            });
         });
+
+        // add coffee shops function
+        function addCoffeeShops() {
+            coffeeShopPoints.addTo(map);
+        };
+
+        // Create event listener for the Add Coffee Shops Button
+        document.getElementById("addButton").addEventListener("click",
+                addCoffeeShops);
     </script>
     <script src="js/main.js"></script>
 </body>
