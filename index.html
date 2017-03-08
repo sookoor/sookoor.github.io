@@ -93,6 +93,7 @@
                 <div id="controls" style="margin: 15px;">
                     <button id="addButton">Show All Coffee Shops</button>
                     <button id="removeButton">Hide All Coffee Shops</button>
+                    <button id="toggleButton">Toggle All Coffee Shops</button>
                 </div>
             </div>
         </div>
@@ -245,6 +246,10 @@ myDataPoint.bindPopup("<h3>Kendall Square</h3><p>Cambridge, MA<br> Information a
         // Create event listener for the Remove Coffee Shops Button
         document.getElementById("removeButton").addEventListener("click",
                 removeCoffeeShops);
+
+        // Create event listener for the Toggle Coffee Shops Button
+        document.getElementById("toggleButton").addEventListener("click",
+                toggleCoffeeShops");
  
         // add coffee shops function
         function addCoffeeShops() {
@@ -254,6 +259,15 @@ myDataPoint.bindPopup("<h3>Kendall Square</h3><p>Cambridge, MA<br> Information a
         // remove coffee shops function
         function removeCoffeeShops() {
             map.removeLayer(coffeeShopPoints);
+        };
+
+        // Toggle Coffee Shops
+        function toggleCoffeeShops() {
+            if (map.hasLayer(coffeeShopPoints)) {
+                removeCoffeeShops();
+            } else {
+                addCoffeeShops();
+            }
         };
    </script>
     <script src="js/main.js"></script>
