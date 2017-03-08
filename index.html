@@ -14,6 +14,12 @@
     <!-- External Stylesheets -->
     <link rel="stylesheet"
           href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
+    <style>
+        #controls {
+            float: left;
+                position: relative;
+        }
+    </style>
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -32,7 +38,6 @@
 </head>
 
 <body>
-    <!-- Our web map and content will go here -->
 
     <!-- Navigation -->
     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
@@ -79,6 +84,7 @@
         </div>
         <!-- /.row -->
 
+        <!-- Our web map and content will go here -->
         <div class="row">
             <div class="col-lg-12">
                 <div id="map" style="width: 705px; height: 375px"></div>
@@ -95,40 +101,6 @@
                     <button id="removeButton">Hide All Coffee Shops</button>
                     <button id="toggleButton">Toggle All Coffee Shops</button>
                 </div>
-            </div>
-        </div>
-        <!-- /.row -->
-
-        <hr>
-
-        <!-- Projects Row -->
-        <div class="row">
-            <div class="col-md-4 portfolio-item">
-                <a href="#">
-                    <img class="img-responsive" src="images/boston.jpg" alt="">
-                </a>
-                <h3>
-                    <a href="#">Welcome to Boston!</a>
-                </h3>
-                <p>Boston is the capital and largest city of the Commonwealth of Massachusetts in the United States. Boston also serves as county seat of Suffolk County.</p>
-            </div>
-            <div class="col-md-4 portfolio-item">
-                <a href="#">
-                    <img class="img-responsive" src="images/mit.jpg" alt="">
-                </a>
-                <h3>
-                    <a href="#">Massachusetts Institute of Technology</a>
-                </h3>
-                <p>The Massachusetts Institute of Technology (MIT) is a private research university in Cambridge, Massachusetts that stresses laboratory instruction in applied science and engineering.</p>
-            </div>
-            <div class="col-md-4 portfolio-item">
-                <a href="#">
-                    <img class="img-responsive" src="images/cat.jpg" alt="">
-                </a>
-                <h3>
-                    <a href="#">Grumpy Cat</a>
-                </h3>
-                <p>This cat is grumpy.</p>
             </div>
         </div>
         <!-- /.row -->
@@ -162,10 +134,15 @@
             src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <!-- Web Map Scripts are here -->
     <script>
+        // Web map code goes here
         // Create variable to hold map element, give initial settings to map
         var map = L.map('map', { center: [42.362432, -71.086086], zoom: 14});
         // Add OpenStreetMap tile layer to map
-        L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', { attribution: '© OpenStreetMap' }).addTo(map);
+        L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', { attribution:
+                '&copy; <a
+                href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>' }).addTo(map);
+
+        map.doubleClickZoom.disable();
 
         // Create point feature for Kendall Square T Station
         var myDataPoint = L.marker([42.362432, -71.086086]).addTo(map);
