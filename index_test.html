@@ -1,0 +1,17 @@
+<html>
+    <head>
+         <link rel="stylesheet"
+               href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css" />
+    </head>
+    <body>
+        <div id = "mapid" style="height: 180px"></div>
+
+        <script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script>
+        <script>
+var mymap = L.map('mapid', { center: [51.505, -0.09], zoom: 13});
+            L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', { attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'}).addTo(map);
+
+        </script>
+    </body>
+
+</html>

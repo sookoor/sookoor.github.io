@@ -1,17 +1,110 @@
+<!DOCTYPE html>
 <html>
-    <head>
-         <link rel="stylesheet"
-               href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css" />
-    </head>
-    <body>
-        <div id = "mapid" style="height: 180px"></div>
+<head>
+    <title>Leaflet Map</title>
 
-        <script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script>
-        <script>
-var mymap = L.map('mapid', { center: [51.505, -0.09], zoom: 13});
-            L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', { attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'}).addTo(map);
+    <!-- External Stylesheets -->
+    <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
+    <style>
+        #controls {
+            float: left;
+                position: relative;
+        }
+    </style>
+</head>
 
-        </script>
-    </body>
+<body>
+        <!-- Our web map and content will go here -->
+        <div id="map" style="width: 705px; height: 375px"></div>
+        <div id="controls" style="margin: 15px;">
+            <button id="addButton">Show All Coffee Shops</button>
+            <button id="removeButton">Hide All Coffee Shops</button>
+            <button id="toggleButton">Toggle All Coffee Shops</button>
+        </div>
+        
+        <!-- Add the Leaflet JavaScript library -->
+        <script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
 
+    <!-- Web Map Scripts are here -->
+    <script>
+
+    // Web map code goes here
+    // Create variable to hold map element, give initial settings to map
+    var map = L.map('map', { center: [42.362432, -71.086086], zoom: 14});
+
+    // Add OpenStreetMap tile layer to map
+    L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', { attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>' }).addTo(map);
+
+    map.doubleClickZoom.disable();
+
+        var coffeeShops = {
+            "type": "FeatureCollection",
+            "features": [
+            {
+                "type": "Feature",
+                "properties": {
+                    "name": "Dunkin Donuts",
+                    "address": "1 Broadway #1, Cambridge, MA 02142",
+                    "latitude": 42.362504,
+                    "longitude": -71.083372
+                },
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [-71.083372, 42.362504]
+                }
+            },
+            {
+                "type": "Feature", 
+                "properties": {
+                    "name": "Starbucks",
+                    "address": "6 Cambridge Center, Cambridge, MA 02142",
+                    "latitude": 42.363884,
+                    "longitude": -71.087749
+                },
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [-71.087749, 42.363884]
+                }
+            }
+            ]
+        };
+
+        // set coffeeShopPoints to our coffeeShop GeoJSON
+        var coffeeShopPoints = null;
+ 
+        // Create event listener for the Add Coffee Shops Button
+        document.getElementById("addButton").addEventListener("click", addCoffeeShops);
+
+         // add coffee shops function
+        function addCoffeeShops() {
+            coffeeShopPoints = L.geoJson(coffeeShops, {
+                onEachFeature: function (feature, layer) { 
+                    layer.bindPopup(feature.properties.name);
+                }
+            }).addTo(map);
+        };
+ 
+        // Create event listener for the Remove Coffee Shops Button
+        document.getElementById("removeButton").addEventListener("click",
+                removeCoffeeShops);
+
+        // remove coffee shops function
+        function removeCoffeeShops() {
+            map.removeLayer(coffeeShopPoints);
+        };
+  
+        // Create event listener for the Toggle Coffee Shops Button
+        document.getElementById("toggleButton").addEventListener("click",
+                toggleCoffeeShops");
+ 
+        // Toggle Coffee Shops
+        function toggleCoffeeShops() {
+            if (map.hasLayer(coffeeShopPoints)) {
+                removeCoffeeShops();
+            } else {
+                addCoffeeShops();
+            }
+        };
+   </script>
+</body>
 </html>
