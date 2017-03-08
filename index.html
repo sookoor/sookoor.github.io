@@ -130,54 +130,18 @@
     <script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
 
     <!-- HTML Page Elements are here -->
-    <script
-            src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <!-- Web Map Scripts are here -->
     <script>
-        // Web map code goes here
-        // Create variable to hold map element, give initial settings to map
-        var map = L.map('map', { center: [42.362432, -71.086086], zoom: 14});
-        // Add OpenStreetMap tile layer to map
-        L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', { attribution:
-                '&copy; <a
-                href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>' }).addTo(map);
 
-        map.doubleClickZoom.disable();
+    // Web map code goes here
+    // Create variable to hold map element, give initial settings to map
+    var map = L.map('map', { center: [42.362432, -71.086086], zoom: 14});
+    // Add OpenStreetMap tile layer to map
+    L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', { attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>' }).addTo(map);
 
-        // Create point feature for Kendall Square T Station
-        var myDataPoint = L.marker([42.362432, -71.086086]).addTo(map);
+    map.doubleClickZoom.disable();
 
-        // Create line feature for Mass Ave Bridge, style and add to map
-        var myDataLine = L.polyline([[42.357227, -71.092631],[42.351411,
-                -71.089723]], {color: 'red', weight: 10}).addTo(map);
-
-        // Create area feature for MIT, style and add to map
-        var myArea = L.polygon([[42.353770, -71.103606], [42.355447,
-                -71.104475], [42.362681, -71.089830], [42.361829, -71.079230]], {color: 'blue', weight: 4}).addTo(map);
-    
-        // Bind popup to Data Point object
-myDataPoint.bindPopup("<h3>Kendall Square</h3><p>Cambridge, MA<br> Information about Kendall Square.</p>");
-
-        // Bind popup to line object
-        myDataLine.bindPopup("Mass Ave Bridge");
-
-        // Bind popup to area objec
-        myArea.bindPopup("MIT Campus");
-
-        // Create an Empty Popup
-        var popup = L.popup();
-
-        // Write function to set Properties of the Popup
-        function onMapClick(e) {
-            popup
-                .setLatLng(e.latlng)
-                .setContent("You clicked the map at " + e.latlng.toString())
-                .openOn(map);
-        }
-
-        // Listen for a click event on the Map element
-        map.on('click', onMapClick);
-        
         var coffeeShops = {
             "type": "FeatureCollection",
             "features": [
@@ -211,33 +175,33 @@ myDataPoint.bindPopup("<h3>Kendall Square</h3><p>Cambridge, MA<br> Information a
         };
 
         // set coffeeShopPoints to our coffeeShop GeoJSON
-        var coffeeShopPoints = L.geoJson(coffeeShops, {
-            onEachFeature: function (feature, layer) { 
-                layer.bindPopup(feature.properties.name);
-            }
-        });
+        var coffeeShopPoints = null;
  
         // Create event listener for the Add Coffee Shops Button
         document.getElementById("addButton").addEventListener("click", addCoffeeShops);
 
+         // add coffee shops function
+        function addCoffeeShops() {
+            coffeeShopPoints = L.geoJson(coffeeShops, {
+                onEachFeature: function (feature, layer) { 
+                    layer.bindPopup(feature.properties.name);
+                }
+            }).addTo(map);
+        };
+ 
         // Create event listener for the Remove Coffee Shops Button
         document.getElementById("removeButton").addEventListener("click",
                 removeCoffeeShops);
-
-        // Create event listener for the Toggle Coffee Shops Button
-        document.getElementById("toggleButton").addEventListener("click",
-                toggleCoffeeShops");
- 
-        // add coffee shops function
-        function addCoffeeShops() {
-            coffeeShopPoints.addTo(map);
-        };
 
         // remove coffee shops function
         function removeCoffeeShops() {
             map.removeLayer(coffeeShopPoints);
         };
-
+  
+        // Create event listener for the Toggle Coffee Shops Button
+        document.getElementById("toggleButton").addEventListener("click",
+                toggleCoffeeShops");
+ 
         // Toggle Coffee Shops
         function toggleCoffeeShops() {
             if (map.hasLayer(coffeeShopPoints)) {
@@ -249,5 +213,4 @@ myDataPoint.bindPopup("<h3>Kendall Square</h3><p>Cambridge, MA<br> Information a
    </script>
     <script src="js/main.js"></script>
 </body>
-
 </html>
