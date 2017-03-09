@@ -12,7 +12,7 @@
 </head>
 <body>
 <!-- Our web map and content will go here -->
-<div id="map" style="width: 705px; height: 375px"></div>
+<div id="map" style="width: 715px; height: 375px"></div>
 <div id="controls" style="margin: 15px;">
     <button id="addButton">Show All Coffee Shops</button>
     <button id="removeButton">Hide All Coffee Shops</button>
@@ -44,6 +44,19 @@
     });
 
     // Use $("elementID") and the jQuery click listener method to add all of the data layers
+    $("#addButton").click(function () {
+        map.removeLayer(coffeeShopPoints);
+        $.getJSON("data/coffee_cafes.js", function (data) {
+            // add GeoJSON layer to the map oncethe file is loaded
+            coffeeShopPoints = L.geoJson(data, {
+                onEachFeature: function (feature, layer) {
+                    layer.bindPopup(feature.properties.name);
+                }
+            }).addTo(map);
+        });
+    });
+
+    // Use $("elementID") and the jQuery click listener method to remove all of the data layers
     $("#removeButton").click(function () {
         map.removeLayer(coffeeShopPoints);
     });
