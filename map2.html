@@ -93,6 +93,15 @@
         });
     });
 
+    // Use $("elementID") and the jQuery click listener method to toggle all of the data layers
+    $("#toggleButton").click(function () {
+        if (map.hasLayer(coffeeShopPoints)) {
+            map.removeLayer(coffeeShopPoints);
+        } else {
+            map.addLayer(coffeeShopPoints);
+        }
+    });
+
 </script>
 </body>
 </html>
