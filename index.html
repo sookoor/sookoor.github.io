@@ -129,11 +129,10 @@
         }
 
         // Event Listener for a click on the Dunkin Donuts button
-        document.getElementById("filterDD").addEventListener("click",
-                filterDD);
+        document.getElementById("filterDD").addEventListener("click", filterDD);
 
         // Function to update coffeeShopPoints to filtered subset of data showing Dunkin Donuts
-        function filtereDD() {
+        function filterDD() {
             if(map.hasLayer(coffeeShopPoints)) {
                 removeCoffeeShops();
             };
