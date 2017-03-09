@@ -46,7 +46,7 @@
     // Use $("elementID") and the jQuery click listener method to add all of the data layers
     $("#addButton").click(function () {
         map.removeLayer(coffeeShopPoints);
-        $.getJSON("data/coffee_cafes.js", function (data) {
+        $.getJSON("data/coffee_cafes.geojason", function (data) {
             // add GeoJSON layer to the map oncethe file is loaded
             coffeeShopPoints = L.geoJson(data, {
                 onEachFeature: function (feature, layer) {
