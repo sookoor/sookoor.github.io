@@ -87,7 +87,7 @@
                 onEachFeature: function (feature, layer) {
                     layer.bindPopup(feature.properties.name);
                 }, filter: function (feature) {
-                    return feature.properties.name == "Dunkin Donuts";
+                    return feature.properties.name == "Dunkin' Donuts";
                 }
             }).addTo(map);
         });
