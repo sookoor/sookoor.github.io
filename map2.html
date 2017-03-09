@@ -76,6 +76,23 @@
             }).addTo(map);
         });
     });
+
+    // Use $("elementID") and the JQuery click listener method to create a filter
+    $("#filterDD").click(function () {
+        map.removeLayer(coffeeShopPoints);
+        $.getJSON("data/coffee_cafes.geojson", function (data) {
+
+            // add GeoJSON layer to the map once the file is loaded
+            coffeeShopPoints = L.geoJson(data, {
+                onEachFeature: function (feature, layer) {
+                    layer.bindPopup(feature.properties.name);
+                }, filter: function (feature) {
+                    return feature.properties.name == "Dunkin Donuts";
+                }
+            }).addTo(map);
+        });
+    });
+
 </script>
 </body>
 </html>
