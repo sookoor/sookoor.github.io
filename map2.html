@@ -28,6 +28,20 @@
 
     // Tile Layer is added to our basemap here
     L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'}).addTo(map);
+
+    // Null variable that will hold our data
+    var coffeeShopPoints = null;
+
+    // load GeoJSON from an external file
+    $.getJSON("data/coffee_cafes.geojson", function (data) {
+
+        // set coffeeShops to GeoJSON, add GeoJSON layer to the map once the file is loaded
+        coffeeShopPoints = L.geoJson(data, {
+            onEachFeature: function (feature, layer) {
+                layer.bindPopup(feature.properties.name);
+            }
+        }).addTo(map);
+    });
 </script>
 </body>
 </html>
