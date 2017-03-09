@@ -108,8 +108,7 @@
         };
 
         // Event Listener for a click on the Starbucks button
-        document.getElementById("filterSBux").addEventListener("click",
-                filterSBux);
+        document.getElementById("filterSBux").addEventListener("click", filterSBux);
 
         // Function to update coffeeshopPoints to filtered subset of data showing Starbucks
         function filterSBux() {
@@ -120,7 +119,7 @@
             };
 
             // Filter GeoJSON
-            coffeeShopPoints = L.geoJson(coffeeshops, {
+            coffeeShopPoints = L.geoJson(coffeeShops, {
                 onEachFeature: function (feature, layer) {
                     layer.bindPopup(feature.properties.name);
                 }, filter: function (feature, layer) {
