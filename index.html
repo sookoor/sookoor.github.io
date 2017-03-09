@@ -127,6 +127,25 @@
                 }
             }).addTo(map); // Add the filtered GeoJSON element to our Map
         }
+
+        // Event Listener for a click on the Dunkin Donuts button
+        document.getElementById("filterDD").addEventListener("click",
+                filterDD);
+
+        // Function to update coffeeShopPoints to filtered subset of data
+showing Dunkin Donuts
+        function filtereDD() {
+            if(map.hasLayer(coffeeShopPoints)) {
+                removeCoffeeShops();
+            };
+            coffeeShopPoints = L.geoJson(coffeeShops, {
+                onEachFeature: function (feature, layer) {
+                    layer.bindPopup(feature.properties.name);
+                }, filter: function (feature, layer) {
+                    return feature.properties.name == "Dunkin Donuts";
+                }
+            }).addTo(map);
+        }
    </script>
 </body>
 </html>
