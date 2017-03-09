@@ -20,6 +20,8 @@
             <button id="addButton">Show All Coffee Shops</button>
             <button id="removeButton">Hide All Coffee Shops</button>
             <button id="toggleButton">Toggle All Coffee Shops</button>
+            <button id="filterSBux">Starbucks</button>
+            <button id="filterDD">Dunkin Donuts</button>
         </div>
         
         <!-- Add the Leaflet JavaScript library -->
@@ -104,6 +106,29 @@
                 addCoffeeShops();
             }
         };
+
+        // Event Listener for a click on the Starbucks button
+        document.getElementById("filterSBux").addEventListener("click",
+                filterSBux);
+
+        // Function to update coffeeshopPoints to filtered subset of data
+showing Starbucks
+        function filterSBux() {
+            
+            // Example of Adding a Filtered GeoJSON to our Map
+            if(map.hasLayer(coffeeShopPoints)) {
+                removeCoffeeShops();
+            };
+
+            // Filter GeoJSON
+            coffeeShopPoints = L.geoJson(coffeeshops, {
+                onEachFeature: function (feature, layer) {
+                    layer.bindPopup(feature.properties.name);
+                }, filter: function (feature, layer) {
+                    return feature.properties.name == "Starbucks";
+                }
+            }).addTo(map); // Add the filtered GeoJSON element to our Map
+        }
    </script>
 </body>
 </html>
