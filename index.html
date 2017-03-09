@@ -79,6 +79,9 @@
 
          // add coffee shops function
         function addCoffeeShops() {
+            if (map.hasLayer(coffeeShopPoints)) {
+                removeCoffeeShops();
+            };
             coffeeShopPoints = L.geoJson(coffeeShops, {
                 onEachFeature: function (feature, layer) { 
                     layer.bindPopup(feature.properties.name);
