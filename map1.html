@@ -78,6 +78,9 @@
         violationPoints = L.geoJson(data, {
             onEachFeature: function (feature, layer) {
                 layer.bindPopup(feature.properties.address);
+            }, pointToLayer: function (feature, latlng) {
+                var marker = L.marker(latlng, {icon: rodentIcon});
+                return marker;
             }
         }).addTo(map);
     });
