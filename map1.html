@@ -5,7 +5,7 @@
     <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css"/>
     <style>
         body {
-            margin: 0px;
+            margin: 0;
         }
 
         img {
@@ -35,8 +35,8 @@
         }
 
         #header {
-            margin-top: 0px;
-            margin-bottom: 0px;
+            margin-top: 0;
+            margin-bottom: 0;
         }
     </style>
 </head>
@@ -73,8 +73,14 @@
 
     // Get GeoJSON and put it on the map when it loads
     $.getJSON("data/rodent_violations.geojson", function(data) {
-        
-    })
+
+        // set violationPoints to the dataset, and add the rodent violation GeoJSON layer to the map
+        violationPoints = L.geoJson(data, {
+            onEachFeature: function (feature, layer) {
+                layer.bindPopup(feature.properties.address);
+            }
+        }).addTo(map);
+    });
 </script>
 </body>
 </html>
