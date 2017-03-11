@@ -68,6 +68,13 @@
     }).addTo(map);
 
     // Add Rodent Violation GeoJSON Data
+    // Null variable that will hold rodent violation data
+    var violationPoints = null;
+
+    // Get GeoJSON and put it on the map when it loads
+    $.getJSON("data/rodent_violations.geojson", function(data) {
+        
+    })
 </script>
 </body>
 </html>
