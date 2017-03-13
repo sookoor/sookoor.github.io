@@ -79,23 +79,33 @@
             onEachFeature: function (feature, layer) {
                 layer.bindPopup(feature.properties.address);
             }, pointToLayer: function (feature, latlng) {
-                var marker = L.marker(latlng, {icon: rodentIcon});
+                var marker = null;
+                if (feature.properties.status == "cited") {
+                    marker = L.marker(latlng, {icon: citedIcon});
+                } else {
+                    marker = L.marker(latlng, {icon: correctedIcon});
+                }
                 return marker;
             }
         }).addTo(map);
     });
 
     // Create Custom Icons Here
-    // Rodent Icon
-    var rodentIcon = L.icon({
-        iconUrl: 'images/rodent.png',
-        shadowUrl: 'images/rodent_shadow.png',
-        iconSize: [36, 36],
-        shadowSize: [36, 36],
-        iconAnchor: [18, 18],
-        shadowAnchor: [18, 18],
-        popupAnchor: [0, -6]
+    // Rodent Icon Class
+    var RodentIcon = L.Icon.extend({
+        options: {
+            shadowUrl: 'images/rodent_shadow.png',
+            iconSize: [36, 36],
+            shadowSize: [36, 36],
+            iconAnchor: [18, 18],
+            shadowAnchor: [18, 18],
+            popupAnchor: [0, -6]
+        }
     });
+
+    // Create specific icons
+    var citedIcon = new RodentIcon({iconUrl: 'images/rodent_open.png'});
+    var correctedIcon = new RodentIcon({iconUrl: 'images/rodent.png'});
 </script>
 </body>
 </html>
