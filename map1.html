@@ -80,7 +80,7 @@
                 layer.bindPopup(feature.properties.address);
             }, pointToLayer: function (feature, latlng) {
                 var marker = null;
-                if (feature.properties.status == "cited") {
+                if (feature.properties.status == "Cited") {
                     marker = L.marker(latlng, {icon: citedIcon});
                 } else {
                     marker = L.marker(latlng, {icon: correctedIcon});
