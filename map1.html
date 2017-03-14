@@ -152,7 +152,7 @@
 
     // Add Neighborhood Polygons
     $.getJSON("data/cambridge_neighborhoods.geojson", function (data) {
-        neighborhoodsLayer = L.geoJson(data, {style: style}).addTo(map);
+        neighborhoodsLayer = L.geoJson(data, {style: style});
     });
 
     // Set function for color ramp
@@ -211,6 +211,12 @@
             map.removeLayer(violationPoints);
         } else {
             map.addLayer(violationPoints);
+        }
+
+        if (map.hasLayer(neighborhoodsLayer)) {
+            map.removeLayer(neighborhoodsLayer);
+        } else {
+            map.addLayer(neighborhoodsLayer);
         }
     });
 </script>
