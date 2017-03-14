@@ -200,7 +200,7 @@
     };
 
     // Add Legend to Map
-    legend.addTo(map);
+    //legend.addTo(map);
 
     // Add Scale Bar to Map
     L.control.scale({position: 'bottomleft'}).addTo(map);
@@ -217,6 +217,12 @@
             map.removeLayer(neighborhoodsLayer);
         } else {
             map.addLayer(neighborhoodsLayer);
+        }
+
+        if (map.hasLayer(legend)) {
+            map.removeLayer(legend);
+        } else {
+            map.addLayer(legend);
         }
     });
 </script>
