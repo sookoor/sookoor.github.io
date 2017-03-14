@@ -38,6 +38,37 @@
             margin-top: 0;
             margin-bottom: 0;
         }
+
+        .legend {
+            line-height: 18px;
+            color: #333333;
+            font-family: 'Open Sans', Helvetica, sans-serif;
+            padding: 6px 8px;
+            background: white;
+            background: rgba(255, 255, 255, 0.8);
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+            border-radius: 5px;
+        }
+
+        .legend i {
+            width: 18px;
+            height: 18px;
+            float: left;
+            margin-right: 8px;
+            opacity: 0.7;
+        }
+
+        .legend img {
+            width: 18px;
+            height: 18px;
+            float: left;
+        }
+
+        .legend p {
+            font-size: 12px;
+            line-height: 18px;
+            margin: 0;
+        }
     </style>
 </head>
 <body>
@@ -134,6 +165,33 @@
             dashArray: '3'
         };
     }
+
+    // Create Leaflet Control Object for Legend
+    var legend = L.control({position: 'topright'});
+
+    // Function that runs when legend is added to map
+    legend.onAdd = function (map) {
+
+        // Create Div Element and Populate it with HTML
+        var div = L.DomUtil.create('div', 'legend');
+        div.innerHTML += 'Violation Density';
+        div.innerHTML += 'by Neighborhood';
+        div.innerHTML += 'Violations/Sq. Mi.';
+        div.innerHTML += '85+';
+        div.innerHTML += '15-85';
+        div.innerHTML += '8-15';
+        div.innerHTML += '4-8';
+        div.innerHTML += '0-4';
+        div.innerHTML += 'Individual Violations';
+        div.innerHTML += 'Cited';
+        div.innerHTML += 'Corrected';
+
+        // Return the Legend div containing the HTML content
+        return div;
+    };
+
+    // Add Legend to Map
+    legend.addTo(map);
 </script>
 </body>
 </html>
