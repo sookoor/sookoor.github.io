@@ -112,8 +112,28 @@
 
     // Add Neighborhood Polygons
     $.getJSON("data/cambridge_neighborhoods.geojson", function (data) {
-        neighborhoodsLayer = L.geoJson(data).addTo(map);
+        neighborhoodsLayer = L.geoJson(data, {style: style}).addTo(map);
     });
+
+    // Set function for color ramp
+    function setColor(density) {
+        return density > 85 ? '#a50f15' :
+            density > 15 ? '#de2d26' :
+                density > 8 ? '#fb6a4a' :
+                    density > 4 ? '#fcae91' :
+                        '#fee5d9';
+    }
+    // Set style function that sets fill color property equal to rodent density
+    function style(feature) {
+        return {
+            fillColor: setColor(feature.properties.rodentDensity),
+            fillOpacity: 0.7,
+            weight: 2,
+            opacity: 1,
+            color: '#ffffff',
+            dashArray: '3'
+        };
+    }
 </script>
 </body>
 </html>
