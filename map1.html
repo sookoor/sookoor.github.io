@@ -204,6 +204,15 @@
 
     // Add Scale Bar to Map
     L.control.scale({position: 'bottomleft'}).addTo(map);
+
+    // Use $("elementID") and the jQuery click listener method to toggle all of the data layers
+    $("#toggleButton").click(function () {
+        if (map.hasLayer(violationPoints)) {
+            map.removeLayer(violationPoints);
+        } else {
+            map.addLayer(violationPoints);
+        }
+    });
 </script>
 </body>
 </html>
