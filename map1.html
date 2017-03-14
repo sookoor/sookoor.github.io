@@ -215,14 +215,10 @@
 
         if (map.hasLayer(neighborhoodsLayer)) {
             map.removeLayer(neighborhoodsLayer);
+            legend.removeFrom(map);
         } else {
             map.addLayer(neighborhoodsLayer);
-        }
-
-        if (map.hasLayer(legend)) {
-            map.removeLayer(legend);
-        } else {
-            map.addLayer(legend);
+            legend.addTo(map);
         }
     });
 </script>
