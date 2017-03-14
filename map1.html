@@ -106,6 +106,14 @@
     // Create specific icons
     var citedIcon = new RodentIcon({iconUrl: 'images/rodent_open.png'});
     var correctedIcon = new RodentIcon({iconUrl: 'images/rodent.png'});
+
+    // Null variable that will hold neighborhoods layer
+    var neighborhoodsLayer = null;
+
+    // Add Neighborhood Polygons
+    $.getJSON("data/cambridge_neighborhoods.geojson", function (data) {
+        neighborhoodsLayer = L.geoJson(data).addTo(map);
+    });
 </script>
 </body>
 </html>
