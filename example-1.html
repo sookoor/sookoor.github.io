@@ -71,11 +71,33 @@
             }).addTo(map);
         });
     }
-
     // Run showAll function automatically when document loads
     $(document).ready(function () {
         showAll();
-    })
+    });
+
+    // Function to Filter Starbucks
+    function showStarbucks() {
+        if (map.hasLayer(coffeeShopLocations)) {
+            map.removeLayer(coffeeShopLocations);
+        }
+        $.getJSON("https://" + cartoDBUserName + ".carto.com/api/v2/sql?format=GeoJSON&q=" + sqlQueryStarbucks, function (data) {
+            coffeeShopLocations = L.geoJson(data, {
+                onEachFeature: function (feature, layer) {
+                    layer.bindPopup('<p><b>' + feature.properties.name + '</b><br /><em>' + feature.properties.address + '</em></p>');
+                    layer.cartodb_id = feature.properties.cartodb_id;
+                }
+            }).addTo(map);
+        });
+    }
+    // Event Listeners
+    $('input[value=starbucks]').click(function () {
+        showStarbucks();
+    });
+
+    $('input[value=all]').click(function () {
+        showAll();
+    });
 </script>
 </body>
 </html>
