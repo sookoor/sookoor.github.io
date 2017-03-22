@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b78f889c-6af9-462b-97f0-9dc83320cbfb" name="Default" comment="Create an Icon Class and Change Icons for Open and Closed Cases" />
+    <list default="true" id="b78f889c-6af9-462b-97f0-9dc83320cbfb" name="Default" comment="Find all Coffee Shops Near a Click">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+    </list>
     <list id="28c31db2-7e9d-4ef0-8dc1-5c8a3e91b31d" name="Rejected commit: Default" comment="Use JQuery to add our external dataset" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -11,50 +13,47 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CreatePatchCommitExecutor">
-    <option name="PATCH_PATH" value="" />
+    <option name="PATCH_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="map2.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/map2.html">
+      <file leaf-file-name="example-1.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/example-1.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1125">
-              <caret line="75" column="26" lean-forward="false" selection-start-line="75" selection-start-column="26" selection-end-line="75" selection-end-column="26" />
-              <folding>
-                <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <marker date="1489080260000" expanded="true" signature="1076:1082" ph="©" />
-              </folding>
+            <state relative-caret-position="195">
+              <caret line="64" column="46" lean-forward="false" selection-start-line="64" selection-start-column="38" selection-end-line="64" selection-end-column="46" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="map1.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/map1.html">
+      <file leaf-file-name="example-2.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/example-2.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="243">
-              <caret line="106" column="68" lean-forward="false" selection-start-line="106" selection-start-column="68" selection-end-line="106" selection-end-column="68" />
+            <state relative-caret-position="116">
+              <caret line="89" column="0" lean-forward="true" selection-start-line="89" selection-start-column="0" selection-end-line="89" selection-end-column="0" />
               <folding>
-                <element signature="n#style#0;n#img#0;n#h1#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding>
-                <marker date="1489025757000" expanded="true" signature="1310:1316" ph="©" />
+                <element signature="e#921#927#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="CSS File" />
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>username</find>
+    </findStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -69,6 +68,9 @@
       <list>
         <option value="$PROJECT_DIR$/map2.html" />
         <option value="$PROJECT_DIR$/map1.html" />
+        <option value="$PROJECT_DIR$/css/style.css" />
+        <option value="$PROJECT_DIR$/example-1.html" />
+        <option value="$PROJECT_DIR$/example-2.html" />
       </list>
     </option>
   </component>
@@ -79,8 +81,8 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="42" />
-    <option name="y" value="44" />
+    <option name="x" value="48" />
+    <option name="y" value="46" />
     <option name="width" value="1260" />
     <option name="height" value="733" />
   </component>
@@ -102,9 +104,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scratches" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -133,6 +132,9 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -140,6 +142,8 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="js.eslint.eslintPackage" value="" />
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
   </component>
   <component name="RunManager">
     <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
@@ -535,6 +539,10 @@
       <updated>1489031507007</updated>
       <workItem from="1489031511168" duration="8303000" />
       <workItem from="1489251123828" duration="1467000" />
+      <workItem from="1489464760406" duration="4926000" />
+      <workItem from="1489714509857" duration="4181000" />
+      <workItem from="1489932314638" duration="323000" />
+      <workItem from="1490149861252" duration="1615000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit of map2.html">
       <created>1489032277178</created>
@@ -634,14 +642,175 @@
       <option name="project" value="LOCAL" />
       <updated>1489370987566</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Polygon Data and Symbolization">
+      <created>1489464919401</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1489464919401</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Set style option for the GeoJSON">
+      <created>1489465500135</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1489465500135</updated>
+    </task>
+    <task id="LOCAL-00017" summary="Add a Legend">
+      <created>1489502207700</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1489502207705</updated>
+    </task>
+    <task id="LOCAL-00018" summary="Add Legend HTML">
+      <created>1489502751440</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1489502751440</updated>
+    </task>
+    <task id="LOCAL-00019" summary="Add a Scale Bar">
+      <created>1489502883251</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1489502883251</updated>
+    </task>
+    <task id="LOCAL-00020" summary="Link a Font from Google Fonts">
+      <created>1489505428894</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1489505428895</updated>
+    </task>
+    <task id="LOCAL-00021" summary="Style the Credits using CSS">
+      <created>1489505684002</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1489505684003</updated>
+    </task>
+    <task id="LOCAL-00022" summary="Enable toggle button">
+      <created>1489506403098</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1489506403098</updated>
+    </task>
+    <task id="LOCAL-00023" summary="Start off without violation points displayed">
+      <created>1489506549343</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1489506549343</updated>
+    </task>
+    <task id="LOCAL-00024" summary="Toggle neighborhoods layer">
+      <created>1489506664125</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1489506664125</updated>
+    </task>
+    <task id="LOCAL-00025" summary="Toggle legend">
+      <created>1489506848216</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1489506848216</updated>
+    </task>
+    <task id="LOCAL-00026" summary="Toggle legend">
+      <created>1489507070973</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1489507070973</updated>
+    </task>
+    <task id="LOCAL-00027" summary="Adding Data from CartoDB Using the SQL API">
+      <created>1489717854943</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1489717854943</updated>
+    </task>
+    <task id="LOCAL-00028" summary="Stylesheet">
+      <created>1489717903344</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1489717903344</updated>
+    </task>
+    <task id="LOCAL-00029" summary="HTML">
+      <created>1489718067771</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1489718067772</updated>
+    </task>
+    <task id="LOCAL-00030" summary="Function to Filter Starbucks">
+      <created>1489719083834</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1489719083836</updated>
+    </task>
+    <task id="LOCAL-00031" summary="red icon">
+      <created>1489720252612</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1489720252622</updated>
+    </task>
+    <task id="LOCAL-00032" summary="Marker shadow">
+      <created>1489720357814</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1489720357814</updated>
+    </task>
+    <task id="LOCAL-00033" summary="Example 2">
+      <created>1489891055245</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1489891055245</updated>
+    </task>
+    <task id="LOCAL-00034" summary="Use PostGIS to find the Closest Coffee Shops">
+      <created>1490152895572</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1490152895572</updated>
+    </task>
+    <task id="LOCAL-00035" summary="Changed cartodb to carto">
+      <created>1490153141752</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1490153141752</updated>
+    </task>
+    <task id="LOCAL-00036" summary="CartoDB username">
+      <created>1490153321128</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1490153321131</updated>
+    </task>
+    <task id="LOCAL-00037" summary="Find all Coffee Shops Near a Click">
+      <created>1490156518007</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1490156518007</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="9770000" />
+    <option name="totallyTimeSpent" value="20815000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="42" y="44" width="1260" height="733" extended-state="0" />
+    <frame x="48" y="46" width="1260" height="733" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -683,21 +852,33 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_CLEANUP_BEFORE_PROJECT_COMMIT" value="true" />
-    <MESSAGE value="Initial commit of map2.html" />
-    <MESSAGE value="Use JQuery to add our external dataset" />
-    <MESSAGE value="Activate Remove all Coffee Shops and Filter Starbucks" />
-    <MESSAGE value="Use $( &quot;elementID&quot;) and the jQuery click listener method to add all of the data layers" />
-    <MESSAGE value="Fixed .js to .geojs" />
-    <MESSAGE value="Fixed geojason typo" />
-    <MESSAGE value="Activate Filter Dunkin Donuts" />
-    <MESSAGE value="Changed Dunkin Donuts to Dunkin' Donuts" />
-    <MESSAGE value="Activate Toggle all Coffee Shops" />
-    <MESSAGE value="Set up Rodent Violations - Cambridge, Mass. Map" />
-    <MESSAGE value="Add the Rodent Violation Data" />
     <MESSAGE value="Create a Custom Marker" />
     <MESSAGE value="Create an Icon Class and Change Icons for Open and Closed Cases" />
     <MESSAGE value="Fixed capitalization of cited" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed capitalization of cited" />
+    <MESSAGE value="Polygon Data and Symbolization" />
+    <MESSAGE value="Set style option for the GeoJSON" />
+    <MESSAGE value="Add a Legend" />
+    <MESSAGE value="Add Legend HTML" />
+    <MESSAGE value="Add a Scale Bar" />
+    <MESSAGE value="Link a Font from Google Fonts" />
+    <MESSAGE value="Style the Credits using CSS" />
+    <MESSAGE value="Enable toggle button" />
+    <MESSAGE value="Start off without violation points displayed" />
+    <MESSAGE value="Toggle neighborhoods layer" />
+    <MESSAGE value="Toggle legend" />
+    <MESSAGE value="Adding Data from CartoDB Using the SQL API" />
+    <MESSAGE value="Stylesheet" />
+    <MESSAGE value="HTML" />
+    <MESSAGE value="Function to Filter Starbucks" />
+    <MESSAGE value="red icon" />
+    <MESSAGE value="Marker shadow" />
+    <MESSAGE value="Example 2" />
+    <MESSAGE value="Use PostGIS to find the Closest Coffee Shops" />
+    <MESSAGE value="Changed cartodb to carto" />
+    <MESSAGE value="CartoDB username" />
+    <MESSAGE value="Find all Coffee Shops Near a Click" />
+    <option name="LAST_COMMIT_MESSAGE" value="Find all Coffee Shops Near a Click" />
+    <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
@@ -706,15 +887,43 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/map2.html">
+    <entry file="file://$PROJECT_DIR$/example-1.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1140">
+          <caret line="76" column="7" lean-forward="false" selection-start-line="76" selection-start-column="7" selection-end-line="76" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/example-2.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <marker date="1489080260000" expanded="true" signature="1076:1082" ph="©" />
+            <element signature="e#921#927#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/example-1.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/map2.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="555">
+          <caret line="37" column="81" lean-forward="false" selection-start-line="37" selection-start-column="81" selection-end-line="37" selection-end-column="81" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/map1.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -722,11 +931,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1125">
           <caret line="75" column="26" lean-forward="false" selection-start-line="75" selection-start-column="26" selection-end-line="75" selection-end-column="26" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <marker date="1489080260000" expanded="true" signature="1076:1082" ph="©" />
-          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/map1.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -734,9 +945,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1489025757000" expanded="true" signature="1310:1316" ph="©" />
-          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/map2.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -745,12 +960,48 @@
         <state />
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1698">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/map1.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="243">
-          <caret line="106" column="68" lean-forward="false" selection-start-line="106" selection-start-column="68" selection-end-line="106" selection-end-column="68" />
+        <state relative-caret-position="372">
+          <caret line="215" column="47" lean-forward="false" selection-start-line="215" selection-start-column="47" selection-end-line="215" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/map2.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="555">
+          <caret line="37" column="81" lean-forward="false" selection-start-line="37" selection-start-column="81" selection-end-line="37" selection-end-column="81" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="63">
+          <caret line="41" column="21" lean-forward="false" selection-start-line="41" selection-start-column="21" selection-end-line="41" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/example-1.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="64" column="46" lean-forward="false" selection-start-line="64" selection-start-column="38" selection-end-line="64" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/example-2.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="116">
+          <caret line="89" column="0" lean-forward="true" selection-start-line="89" selection-start-column="0" selection-end-line="89" selection-end-column="0" />
           <folding>
-            <element signature="n#style#0;n#img#0;n#h1#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="e#921#927#0" expanded="true" />
           </folding>
         </state>
       </provider>
