@@ -15,8 +15,8 @@
     <div id="map"></div>
     <div id="controls">
         <div id="form">
+            <p>Click on the map to find the five closest coffee shops to that location</p>
             <form action="">
-                <input type="button" onclick="locateUser()" value="Find Coffee Closest to Me">
                 <input type="button" onclick="showAll()" value="Reset Map">
             </form>
         </div>
@@ -40,8 +40,6 @@
     // Declare Variables
     // variable to hold coffee shop locations
     var coffeeShopLocations = null;
-    // variable to hold your location
-    var youAreHere = null;
     // Database Queries
     // Get all coffee cafes from dataset
     var sqlQuery = "SELECT * FROM coffee_cafes";
@@ -79,15 +77,8 @@
         shadowUrl: 'images/marker-shadow.png'
     });
 
-    // Function that will locate the user when called
-    function locateUser() {
-        map.locate({setView: true, maxZoom: 15});
-    }
-    // Map Event Listener listening for when the user location is found
-    map.on('locationfound', locationFound);
-
-    // Map Event Listener listening for when the user location is not found
-    map.on('locationerror', locationNotFound);
+    // Listen for a click event on the Map element
+    map.on('click', locationFound);
 
     // Function that will run when the location of the user is found
     function locationFound(e) {
@@ -95,10 +86,6 @@
         closestCoffee();
         locationMarker = L.marker(e.latlng, {icon: redIcon});
         map.addLayer(locationMarker);
-    }
-    // Function that will run if the location of the user is not found
-    function locationNotFound(e) {
-        alert(e.message);
     }
 
     // Function will find and load the five nearest coffee shops to a user location
