@@ -54,7 +54,7 @@
             map.removeLayer(locationMarker);
         }
         map.setView(new L.LatLng(42.381899, -71.122499), 13);
-        $.getJSON("https://" + cartoDBUserName + ".cartodb.com/api/v2/sql?format=GeoJSON&q=" + sqlQuery, function (data) {
+        $.getJSON("https://" + cartoDBUserName + ".carto.com/api/v2/sql?format=GeoJSON&q=" + sqlQuery, function (data) {
             coffeeShopLocations = L.geoJson(data, {
                 onEachFeature: function (feature, layer) {
                     layer.bindPopup('<p><b>' + feature.properties.name + '</b><br /><em>' + feature.properties.address + '</em></p>');
