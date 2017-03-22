@@ -100,6 +100,31 @@
     function locationNotFound(e) {
         alert(e.message);
     }
+
+    // Function will find and load the five nearest coffee shops to a user location
+    function closestCoffee() {
+
+        // Set SQL Query that will return five closest coffee shops
+        var sqlQueryClosest = "SELECT * FROM coffee_cafes ORDER BY the_geom <-> ST_SetSRID(ST_MakePoint(" + myLocation.lng + "," + myLocation.lat + "), 4326) LIMIT 5";
+
+        // remove coffeeShopLocations if on map
+        if (map.hasLayer(coffeeShopLocations)) {
+            map.removeLayer(coffeeShopLocations);
+        }
+        // remove locationMarker if on map
+        if (map.hasLayer(locationMarker)) {
+            map.removeLayer(locationMarker);
+        }
+        // Get GeoJSON of five closest points to the user
+        $.getJSON("https://" + cartoDBUserName + ".carto.com/api/v2/sql?format=GEoJSON&q=" + sqlQueryClosest, function (data) {
+            coffeeShopLocations = L.geoJson(data, {
+                onEachFeature: function (feature, layer) {
+                    layer.bindPopup('' + feature.properties.name + '' + feature.properties.address + '');
+                    layer.cartodb_id = feature.properties.cartodb_id;
+                }
+            }).addTo(map);
+        });
+    }
 </script>
 </body>
 </html>
