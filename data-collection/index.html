@@ -71,7 +71,7 @@
             cartoDBPoints = L.geoJson(data, {
                 pointToLayer: function (feature, latlng) {
                     var marker = L.marker(latlng);
-                    marker.bindPopup('' + feature.properties.description + 'Submitted by ' + feature.properties.name + '');
+                    marker.bindPopup('<p>' + feature.properties.description + '<br /><em>Submitted by </em>' + feature.properties.name + '</p>');
                     return marker;
                 }
             }).addTo(map);
