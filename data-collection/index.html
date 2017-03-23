@@ -2,10 +2,10 @@
 <html>
 <head>
     <title>Leaflet to CartoDB - Point Collection Tool Beta</title>
-    <link rel="stylesheet" href="css/leaflet.css"/>
-    <link rel="stylesheet" href="css/leaflet.draw.css"/>
-    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
-    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css"/> <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="http://leaflet.github.io/Leaflet.draw/leaflet.draw.css"/> <!-- Leaflet Draw CSS -->
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css"> <!-- jQuery UI CSS -->
+    <link rel="stylesheet" type="text/css" href="css/style.css"> <!-- Our own custom CSS document -->
 </head>
 <body>
 <div id="wrapper">
@@ -38,10 +38,10 @@
 -->
 
 
-<script src="js/leaflet.js"></script>
-<script src="js/leaflet.draw.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+<script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script> <!-- Leaflet v0.7.3 JS -->
+<script src="js/leaflet.draw.js"></script> <!-- Leaflet Draw JS -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script> <!-- jQuery v1.11.2 JS -->
+<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script> <!-- jQueryUI v1.11.4 JS -->
 <script>
     // Create Leaflet map object
     var map = L.map('map', {center: [42.381899, -71.122499], zoom: 13});
@@ -53,6 +53,34 @@
     }).addTo(map);
     // Your script will go here!
 
+    // Add Data from CARTO using the SQL API
+    // Declare Variables
+    // Create Global Variable to hold CARTO points
+    var cartoDBPoints = null;
+
+    // Set your CARTO Username
+    var cartoDBusername = 'tamim';
+
+    // Write SQL Selection Query to be Used on CARTO Table
+    // Name of table is 'data_collector'
+    var sqlQuery = "SELECT * FROM data_collector";
+
+    // Get CARTO selection as GeoJSON and Add to Map
+    function getGeoJSON() {
+        $.getJSON("https://" + cartoDBusername + ".carto.com/api/v2/sql?format=GeoJSON&q=" + sqlQuery, function (data) {
+            cartoDBPoints = L.geoJson(data, {
+                pointToLayer: function (feature, latlng) {
+                    var marker = L.marker(latlng);
+                    marker.bindPopup('' + feature.properties.description + 'Submitted by ' + feature.properties.name + '');
+                    return marker;
+                }
+            }).addTo(map);
+        });
+    }
+    // Run showAll function automatically when document loads
+    $(document).ready(function () {
+        getGeoJSON();
+    });
 </script>
 </body>
 </html>
