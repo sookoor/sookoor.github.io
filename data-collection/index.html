@@ -81,6 +81,46 @@
     $(document).ready(function () {
         getGeoJSON();
     });
+
+    // Create Leaflet Draw Control for the draw tools and toolbox
+    var drawControl = new L.Control.Draw({
+        draw: {
+            polygon: false,
+            polyline: false,
+            rectangle: false,
+            circle: false
+        },
+        edit: false,
+        remove: false
+    });
+
+    // Boolean global variable used to control visibility
+    var controlOnMap = false;
+
+    // Create variable for Leaflet.draw features
+    var drawnItems = new L.FeatureGroup();
+
+    // Function to add the draw control to the map to start editing
+    function startEdits() {
+        if (controlOnMap === true) {
+            map.removeControl(drawControl);
+            controlOnMap = false;
+        }
+        map.addControl(drawControl);
+        controlOnMap = true;
+    }
+    // Function to remove the draw control from the map
+    function stopEdits() {
+        map.removeControl(drawControl);
+        controlOnMap = false;
+    }
+    // Function to run when feature is drawn on map
+    map.on('draw:created', function (e) {
+        var layer = e.layer;
+        drawnItems.addLayer(layer);
+        map.addLayer(drawnItems);
+        dialog.dialog("open");
+    });
 </script>
 </body>
 </html>
